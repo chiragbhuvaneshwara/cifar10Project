@@ -1,0 +1,6 @@
+CNN_models/ES/*
+CNN_models/*
+
+!CNN_models/ES/.gitkeep
+!CNN_models/.gitkeep
+
