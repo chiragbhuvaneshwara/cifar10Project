@@ -1,6 +1,9 @@
 CNN_models/ES/*.ckpt
 CNN_models/*.ckpt
 TransferLearning_models/*.ckpt
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
 
 !TransferLearning_models/.gitkeep
 !CNN_models/ES/.gitkeep
