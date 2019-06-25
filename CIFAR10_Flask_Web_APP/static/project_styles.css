@@ -1,0 +1,34 @@
+body{
+background: url(floor-tile.png) #cdd0d4;
+}
+
+.error{
+font-size:60px;
+}
+
+.error-msg{
+font-size:50px;
+color: rgb(214, 214, 214);
+}
+
+span{
+font-size: 40px;
+color: red;
+}
+
+h3 { 
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 30px;
+font-style: normal;
+font-variant: normal; 
+font-weight: 700; 
+line-height: 15.4px;
+color: rgb(0, 0, 0);
+ }
+
+
+input{
+font-size: 30px;
+color: green;
+}
+

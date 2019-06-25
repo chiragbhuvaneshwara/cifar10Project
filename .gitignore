@@ -1,11 +1,17 @@
+DNN_models/ES/*.ckpt
+DNN_models/*.ckpt
 CNN_models/ES/*.ckpt
 CNN_models/*.ckpt
 TransferLearning_models/*.ckpt
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+CIFAR10_Flask_Web_APP/static/*.png
+CIFAR10_Flask_Web_APP/*.png
 
 
 !TransferLearning_models/.gitkeep
 !CNN_models/ES/.gitkeep
 !CNN_models/.gitkeep
+!DNN_models/ES/.gitkeep
+!DNN_models/.gitkeep
 
