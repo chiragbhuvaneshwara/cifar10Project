@@ -8,6 +8,6 @@ The following has been achieved in this project:
 3. All code here has been implemented by Chirag Bhuvaneshwara
 
 Contact Me:
-*Name: Chirag Bhuvaneshwara
-*Email: chiragbhuvaneshwar@gmail.com
-*Ph No: +491629520846
+- Name: Chirag Bhuvaneshwara
+- Email: chiragbhuvaneshwar@gmail.com
+- Ph No: +491629520846
