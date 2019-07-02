@@ -1,5 +1,4 @@
 # cifar10Project
-# cifar10Project
 
 This project was developed for the ISS Job Qualification
 The following has been achieved in this project:
