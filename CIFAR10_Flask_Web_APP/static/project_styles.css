@@ -1,5 +1,7 @@
 body{
 background: url(floor-tile.png) #cdd0d4;
+padding-top: 60px;
+padding-bottom: 40px;
 }
 
 .error{
@@ -28,7 +30,45 @@ color: rgb(0, 0, 0);
 
 
 input{
-font-size: 30px;
-color: green;
+    font-size: 20px;
+    color: rgb(90, 90, 90);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+  }
+
+.container{
+    width: 80%;
+    margin: 0 auto; /* Center the DIV horizontally */
 }
 
+.fixed-header, .fixed-footer{
+    width: 100%;
+    position: fixed;        
+    background: #333;
+    padding: 10px 0;
+    color: #fff;
+}
+.fixed-header{
+    top: 0;
+}
+.fixed-footer{
+    bottom: 0;
+}    
+/* Some more styles to beutify this example */
+nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 25px;
+    display: inline-block;
+}
+.container p{
+    line-height: 200px; /* Create scrollbar to test positioning */
+}
+
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+  }

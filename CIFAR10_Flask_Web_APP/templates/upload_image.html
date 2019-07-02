@@ -5,13 +5,40 @@
     <meta charset="UTF-8">
     <title>Upload Image</title>
 </head>
+
+
 <body>
-<form enctype="multipart/form-data" method="post" action="http://localhost:7777/upload/">
-    <center>
-    <h3>Select CIFAR10 image to predict its label.</h3>
-    <input type="file" name="image_file" accept="image/*"><br>
-    <input type="submit" value="Upload">
-    </center>
+
+
+
+<div class="fixed-header">
+        <div class="container">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Products</a>
+                <a href="#">Services</a>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
+    </div>
+
+<div class="container"></div>    
+<form enctype="multipart/form-data" method="post" action="http://localhost:7777/upload/" >
+   
+        <center>
+            <img src="http://karpathy.github.io/assets/cifar_preview.png" alt="CIFAR10 classes preview" width="476" height="368">
+            <h3>Select CIFAR10 image to predict its class.</h3>
+            <input type="file" name="image_file" accept="image/*"><br>
+            <input type="submit" value="Upload">
+        </center>
+  
 </form>
+</div>
+
+<div class="fixed-footer">
+        <div class="container">Copyright &copy; 2016 Your Company</div>        
+    </div>
+
 </body>
 </html>
