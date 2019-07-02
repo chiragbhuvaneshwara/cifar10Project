@@ -14,4 +14,5 @@ CIFAR10_Flask_Web_APP/*.png
 !CNN_models/.gitkeep
 !DNN_models/ES/.gitkeep
 !DNN_models/.gitkeep
+!CIFAR10_Flask_Web_APP/static/cifar_preview.png
 
