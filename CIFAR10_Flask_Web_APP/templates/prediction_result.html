@@ -5,6 +5,62 @@
     <script type="text/javascript" src="{{url_for(endpoint='static', filename='result.js')}}"></script>
     <meta charset="UTF-8">
     <title>Prediction Result</title>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      var colors = ["violet", "indigo", "blue", "green", "maroon", "orange", "red", "cyan", "pink", "olive" ]
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        //data.addColumn('string', 'Class');
+        data.addColumn('string', 'Class');
+        data.addColumn('number', 'Probability')
+        data.addColumn({type:"string", role:'style'});
+        var i;
+        for(i=0; i<10;i++)
+        {
+            var class_name = {{labels|tojson}}[i];
+            var prob = parseFloat({{probs|tojson}}[i]);
+            data.addRows([[class_name, prob, colors[i]]]);
+        }
+        //data.addRows([
+        //  [String({{labels[0]}}), {{probs[0]}}],
+        //  ['Onions', 1],
+        //  ['Olives', 1],
+        //  ['Zucchini', 1],
+        //  ['Pepperoni', 2]
+        //]);
+
+        // Set chart options
+        var options = {'title':'Output Prediction Probabilities',
+                       'width':800,
+                       'height':600,
+                        animation:{
+                            duration: 1500,
+                            easing: 'out',
+                            startup: true
+                        },
+                        legend: 'none'
+      };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+      }
+    </script>
+  </head>
 </head>
 
 <body>
@@ -21,13 +77,20 @@
 
 <center>
     <h3>Input Image : <span>{{inputImageDir}}</span></h1>
+    <img src="{{url_for('static', filename=inputImageDir)}}" width="320" height="320"/>
     <h1>Predicted Class Label : <span>{{predicted_class}}</span></h1>
+    <br>
+    <h1>Prediction Probability Scores Across Class</h1>
+    <div id="chart_div"></div>
+    <br>
+    <!-- <img src="{{url_for('static', filename='plot.png')}}"/> -->
     <br>
     <a href="{{url_for(endpoint='homepage')}}"><span>Back to homepage</span>.</a>
 </center>
 
 <div class="fixed-footer">
-        <div class="container">Copyright &copy; 2019 Chirag Bhuvaneshwara</div>        
+        <div class="container">Copyright &copy; 2019 Chirag Bhuvaneshwara</div> 
+
     </div>
 
 </body>
