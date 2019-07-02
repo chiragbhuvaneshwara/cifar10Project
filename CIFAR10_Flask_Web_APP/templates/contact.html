@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="{{url_for(endpoint='static', filename='project_styles.css')}}">
+    <meta charset="UTF-8">
+    <title>Contact</title>
+</head>
+<body>
+        <div class="fixed-header">
+                <div class="container">
+                    <nav>
+                        <a href="{{ url_for('homepage') }}">Home</a>
+                        <a href="{{ url_for('about') }}">About</a>
+                        <a href="{{ url_for('contact') }}">Contact Me</a> 
+                    </nav>
+                </div>
+            </div> 
+
+<center>
+    <img src="https://avatars1.githubusercontent.com/u/33072319?s=400&u=2554694a0cdbed7520d074c3ea8a1e955eb4dad5&v=4" alt="Chirag Bhuvaneshwara Image" width="300" height="300">
+    <h1>Name: Chirag Bhuvaneshwara</h1>
+    <h1>Email: chiragbhuvaneshwar@gmail,com </h1>
+    <h1>Ph No: +491629520846 </h1> 
+
+    <a href="{{url_for(endpoint='homepage')}}"><span>Back to homepage</span>.</a>
+</center>
+
+<div class="fixed-footer">
+        <div class="container">Copyright &copy; 2019 Chirag Bhuvaneshwara</div>        
+    </div>
+
+</body>
+</html>

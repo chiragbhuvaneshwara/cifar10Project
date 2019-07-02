@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="{{url_for(endpoint='static', filename='project_styles.css')}}">
+    <meta charset="UTF-8">
+    <title>About</title>
+</head>
+<body>
+        <div class="fixed-header">
+                <div class="container">
+                    <nav>
+                        <a href="{{ url_for('homepage') }}">Home</a>
+                        <a href="{{ url_for('about') }}">About</a>
+                        <a href="{{ url_for('contact') }}">Contact Me</a> 
+                    </nav>
+                </div>
+            </div> 
+
+
+    <h1>This project was developed for the ISS Job Qualification</h1>
+
+    <h3>The following has been achieved in this project:</h3>
+    <ol>
+            <li>Multiple DNN, CNN, Transfer Learning Models have been trained and alayzed on CIFAR 10 dataset.</li>
+            <li>On this website, you can access the 4 models having the highest accuracy on the test set.</li>
+            <li>All code here has been implemented by Chirag Bhuvaneshwara.</li>
+          </ol>
+    <a href="{{url_for(endpoint='homepage')}}"><span>Back to homepage</span>.</a>
+
+
+    <div class="fixed-footer">
+            <div class="container">Copyright &copy; 2019 Chirag Bhuvaneshwara</div>        
+        </div>
+    
+    </body>
+</body>
+</html>

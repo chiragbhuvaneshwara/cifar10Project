@@ -12,10 +12,11 @@ def loadModelAndTest():
     
     global secure_filename
     #Reading the image file from the path it was saved in previously.
-    img = imread(os.path.join(app.root_path, secure_filename))
+    inputImageDir = os.path.join(app.root_path, secure_filename)
+    img = imread(inputImageDir)
     img = torch.tensor(img, device=device).float()
     img = img.unsqueeze(0)
-    print('################################################')
+    # print('################################################')
     img = img.permute(0,3,1,2) 
     shape = np.array(img.size()) 
     reqd = np.array([1,3,32,32])
@@ -31,7 +32,11 @@ def loadModelAndTest():
         predicted_class = predicted_classes[0]
         predicted_class = labels[int(predicted_class)]
         
-        return flask.render_template(template_name_or_list="prediction_result.html", predicted_class=predicted_class)
+        # s = os.path.join('../',secure_filename)
+        # s = "file://" + inputImageDir
+        # print('#####################################################')
+        # print(s)
+        return flask.render_template(template_name_or_list="prediction_result.html", predicted_class=predicted_class, inputImageDir= secure_filename)
 
     else:
         # If the image dimensions do not match the CIFAR10 specifications, then an HTML page is rendered to show the problem.
@@ -54,10 +59,48 @@ def redirect_upload():
 
     return flask.render_template(template_name_or_list="upload_image.html")
 
+def about():
+    return flask.render_template(template_name_or_list="about.html")
+
+def contact():
+    return flask.render_template(template_name_or_list="contact.html")
+
+def selectVGG():
+    global modelClass 
+    global modelName
+    
+    modelClass = VggModel
+    modelName = 'vggModel'
+    return flask.render_template(template_name_or_list="upload_image_VGG.html")
+
+def selectALEX():
+    global modelClass 
+    global modelName
+    
+    modelClass = AlexModel
+    modelName = 'alexModel'
+    return flask.render_template(template_name_or_list="upload_image_ALEX.html")
+
+def selectGOOGLE():
+    global modelClass 
+    global modelName
+    
+    modelClass = GoogLeNetModel
+    modelName = 'googleNetModel'
+    return flask.render_template(template_name_or_list="upload_image_GOOGLE.html")
+
+def selectRESNET():
+    global modelClass 
+    global modelName
+    
+    modelClass = ResNetModel
+    modelName = 'resnetModel'
+    return flask.render_template(template_name_or_list="upload_image_RESNET.html")
+
 # Parameters for the model
 path = '../'
-modelClass = ResNetModel
-modelName = 'resnetModel'
+# modelClass = ResNetModel
+# modelName = 'resnetModel'
 fine_tune = False
 pretrained = True
 labels = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
@@ -70,6 +113,15 @@ app = flask.Flask("CIFAR10_Flask_Web_App")
 app.add_url_rule(rule="/predict/", endpoint="predict", view_func=loadModelAndTest)
 app.add_url_rule(rule="/upload/", endpoint="upload", view_func=upload_image, methods=["POST"])
 app.add_url_rule(rule="/", endpoint="homepage", view_func=redirect_upload)
+app.add_url_rule(rule="/about/", endpoint="about", view_func=about)
+app.add_url_rule(rule="/contact/", endpoint="contact", view_func=contact)
+
+app.add_url_rule(rule="/selectVGG/", endpoint="selectVGG", view_func=selectVGG)
+app.add_url_rule(rule="/selectALEX/", endpoint="selectALEX", view_func=selectALEX)
+app.add_url_rule(rule="/selectGOOGLE/", endpoint="selectGOOGLE", view_func=selectGOOGLE)
+app.add_url_rule(rule="/selectRESNET/", endpoint="selectRESNET", view_func=selectRESNET)
 
 if __name__ == "__main__":
+    app.jinja_env.auto_reload = True
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(host="localhost", port=7777, debug=True)

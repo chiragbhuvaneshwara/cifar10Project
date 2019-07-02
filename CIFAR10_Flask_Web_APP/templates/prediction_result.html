@@ -6,10 +6,29 @@
     <meta charset="UTF-8">
     <title>Prediction Result</title>
 </head>
-<body onload="show_alert('{{predicted_class}}')">
-<center><h1>Predicted Class Label : <span>{{predicted_class}}</span></h1>
+
+<body>
+
+<div class="fixed-header">
+        <div class="container">
+            <nav>
+                <a href="{{ url_for('homepage') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('contact') }}">Contact Me</a> 
+            </nav>
+        </div>
+    </div> 
+
+<center>
+    <h3>Input Image : <span>{{inputImageDir}}</span></h1>
+    <h1>Predicted Class Label : <span>{{predicted_class}}</span></h1>
     <br>
-    <a href="{{url_for(endpoint='homepage')}}"><span>Return to homepage</span>.</a>
+    <a href="{{url_for(endpoint='homepage')}}"><span>Back to homepage</span>.</a>
 </center>
+
+<div class="fixed-footer">
+        <div class="container">Copyright &copy; 2019 Chirag Bhuvaneshwara</div>        
+    </div>
+
 </body>
 </html>
