@@ -45,7 +45,7 @@ def loadModelAndTest():
         plt.xlabel("Probability Score")
         plt.ylabel('Class')
         plt.title('Class Prediction Output')
-        plt.savefig(os.path.join(app.root_path,'static','plot.png'))
+        plt.savefig(os.path.join(app.root_path,'static','plot'+secure_filename))
         _, predicted_classes = torch.max(outputs.data, 1)
         predicted_class = predicted_classes[0]
         predicted_class = labels[int(predicted_class)]
@@ -55,7 +55,7 @@ def loadModelAndTest():
         # print('#####################################################')
         # print(s)
         return flask.render_template(template_name_or_list="prediction_result.html", predicted_class=predicted_class, inputImageDir= secure_filename,\
-            data_list = data_list, labels=labels, probs=list([str(i) for i in output_prob]))
+            data_list = data_list, labels=labels, probs=list([str(i) for i in output_prob]), figDir= 'plot'+secure_filename)
 
     else:
         # If the image dimensions do not match the CIFAR10 specifications, then an HTML page is rendered to show the problem.
