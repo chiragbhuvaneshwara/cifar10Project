@@ -20,7 +20,7 @@ Accuracy achieved:
 | ResNet34  | 96.42%  |
 | Inception v3  | * |
 
-* - I was unable to train because of insufficient VRAM. Probably needs 16GB of VRAM.
+* => I was unable to train because of insufficient VRAM. Probably needs 16GB of VRAM.
 
 
 Contact Me:
