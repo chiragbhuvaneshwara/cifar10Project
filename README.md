@@ -33,4 +33,3 @@ Screenshots from the web app:
 Contact Me:
 - Name: Chirag Bhuvaneshwara
 - Email: chiragbhuvaneshwar@gmail.com
-- Ph No: +491629520846
