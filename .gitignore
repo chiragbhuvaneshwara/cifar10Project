@@ -7,7 +7,10 @@ TransferLearning_models/*.ckpt
 */.ipynb_checkpoints/*
 CIFAR10_Flask_Web_APP/static/*.png
 CIFAR10_Flask_Web_APP/*.png
-
+.vscode
+.ipynb_checkpoints
+CIFAR10_Flask_Web_APP/__pycache__
+.Rhistory
 
 !TransferLearning_models/.gitkeep
 !CNN_models/ES/.gitkeep

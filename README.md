@@ -22,6 +22,8 @@ Accuracy achieved:
 
 *=> I was unable to train because of insufficient VRAM. Probably needs 16GB of VRAM.
 
+Screenshots from the web app:
+
 
 Contact Me:
 - Name: Chirag Bhuvaneshwara
