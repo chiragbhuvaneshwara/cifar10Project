@@ -24,6 +24,11 @@ Accuracy achieved:
 
 Screenshots from the web app:
 
+1. Homepage:
+![alt text](https://github.com/chiragbhuvaneshwara/cifar10Project/blob/master/screenshots/homepage.png)
+
+2. Prediction Page:
+![alt text](https://github.com/chiragbhuvaneshwara/cifar10Project/blob/master/screenshots/Pred.png)
 
 Contact Me:
 - Name: Chirag Bhuvaneshwara
